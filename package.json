@@ -1,6 +1,6 @@
 {
   "name": "generator-elderfo-typescript-workspace",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "Boilerplate for typescript projects using yarn workspaces",
   "homepage": "",
   "author": {
@@ -48,11 +48,12 @@
     "pretest": "eslint .",
     "precommit": "lint-staged",
     "test": "jest",
+    "ci": "jest --coverage",
     "semantic-release":
       "semantic-release pre && npm publish && semantic-release post"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
+    "*.js": ["eslint --fix", "git add", "jest --bail --findRelatedTests"],
     "*.json": ["prettier --write", "git add"]
   },
   "eslintConfig": {

@@ -11,7 +11,7 @@ node_js:
 script:
   - yarn run test
 after_success:
-   - npm run semantic-release
+  - yarn run semantic-release
 after_script: 'cat ./coverage/lcov.info | coveralls'
 branches:
   except:
