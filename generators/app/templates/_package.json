@@ -10,5 +10,14 @@
     "typescript": "^2.5.3",
     "yo": "^2.0.0"
   },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "clean-all":
+      "rm -rf ./node_modules && rm -rf ./packages/*/node_modules && rm -rf ./packages/*/build && rm -rf ./tools/*/node_modules",
+    "dev": "lerna run --parallel dev",
+    "pretest": "lerna run --parallel build",
+    "test": "jest -c ./jest.json"
+  },
   "workspaces": ["packages/*", "tools/*"]
 }

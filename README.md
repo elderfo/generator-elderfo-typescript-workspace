@@ -1,5 +1,5 @@
 # generator-elderfo-typescript-workspace [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> Boilerplate for typescript projects using yarn workspaces
+> Boilerplate generator for typescript monorepos not intended to be published to npm.
 
 ## Installation
 
@@ -16,12 +16,37 @@ Then generate your new project:
 yo elderfo-typescript-workspace
 ```
 
-## Getting To Know Yeoman
+## Configuration
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+The generator will prompt you for two values:
+* `Application Name` - the name of the application. _Note:_ when running the generator, you will want to be in the folder above where you want the package to be created
+* `Application Version` - the version to be used with the application
+
+## Structure
+
+The application configuration expects the application to be structured like:
+
+```
+<project-name>/
+|-- packages/
+|-- tools/
+|-- jest.json
+|-- lerna.json
+|-- package.json
+`-- tsconfig.json
+```
+
+* `packages` is for the main applicaiton packages
+* `tools` is for dev packages, such as pre-processors, data generators, etc...
+
+## Npm/yarn Run Scripts
+
+* `bootstrap` - convinence method for `lerna bootstrap`
+* `build` - runs `build` on all packages with a defined `build` script
+* `clean-all` - cleans all `node_modules` and `build` folders
+* `dev` - runs the `dev` script in parallel on all packages that have one defined
+* `pretest` - pre-builds packages for testing
+* `test` - runs tests at a global level
 
 ## License
 
