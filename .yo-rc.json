@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Chris Getsfred",
+      "authorEmail": "cgetsfred@gmail.com",
+      "authorUrl": "http://www.elderfo.com"
+    }
+  }
+}
