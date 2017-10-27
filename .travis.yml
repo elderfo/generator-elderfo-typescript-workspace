@@ -1,6 +1,18 @@
 language: node_js
+cache:
+  directories:
+    - yarn
+notifications:
+  email: false
 node_js:
-  - 7
-  - 6
-  - 4
+  - '8'
+  - '7'
+  - '6'
+script:
+  - yarn run test
+after_success:
+  - yarn run semantic-release
 after_script: 'cat ./coverage/lcov.info | coveralls'
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
