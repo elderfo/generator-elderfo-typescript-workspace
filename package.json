@@ -31,6 +31,7 @@
     "lint-staged": "^4.2.1",
     "nsp": "^2.6.3",
     "prettier": "^1.7.0",
+    "semantic-release": "^8.2.0",
     "yeoman-assert": "^3.1.0",
     "yeoman-test": "^1.7.0"
   },
@@ -46,7 +47,9 @@
     "prepublish": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged",
-    "test": "jest"
+    "test": "jest",
+    "semantic-release":
+      "semantic-release pre && npm publish && semantic-release post"
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"],
