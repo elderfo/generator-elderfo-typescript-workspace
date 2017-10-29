@@ -5,6 +5,10 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "@types/faker": "^4.1.1",
+    "@types/jest": "^21.1.5",
+    "@types/node": "^8.0.47",
+    "jest": "^21.2.1",
     "lerna": "^2.4.0",
     "ts-jest": "^21.1.4",
     "typescript": "^2.5.3",
@@ -17,7 +21,8 @@
       "rm -rf ./node_modules && rm -rf ./packages/*/node_modules && rm -rf ./packages/*/build && rm -rf ./tools/*/node_modules",
     "dev": "lerna run --parallel dev",
     "pretest": "lerna run --parallel build",
-    "test": "jest -c ./jest.json"
+    "test": "jest -c ./jest.json",
+    "generate-package": "yo elderfo-typescript-project:package"
   },
   "workspaces": ["packages/*", "tools/*"]
 }

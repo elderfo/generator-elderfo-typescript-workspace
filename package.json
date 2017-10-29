@@ -1,5 +1,5 @@
 {
-  "name": "generator-elderfo-typescript-workspace",
+  "name": "generator-elderfo-typescript-project",
   "version": "0.0.0-development",
   "description": "Boilerplate for typescript projects using yarn workspaces",
   "homepage": "",
@@ -19,6 +19,7 @@
     "yeoman-generator"
   ],
   "devDependencies": {
+    "@types/jest": "^21.1.5",
     "coveralls": "^2.13.1",
     "eslint": "^4.1.0",
     "eslint-config-prettier": "^2.4.0",
