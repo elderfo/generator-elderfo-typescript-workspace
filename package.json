@@ -19,6 +19,7 @@
     "yeoman-generator"
   ],
   "devDependencies": {
+    "@types/jest": "^21.1.5",
     "coveralls": "^2.13.1",
     "eslint": "^4.1.0",
     "eslint-config-prettier": "^2.4.0",
