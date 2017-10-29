@@ -11,8 +11,9 @@ describe('generator-elderfo-typescript-workspace:app', () => {
   beforeAll(() => {
     return helpers
       .run(path.join(__dirname, '../generators/app'))
+      .withOptions({ 'skip-bootstrap': true })
       .withPrompts({ name: appName, version: appVersion });
-  });
+  }, 10000);
 
   it('should assign version to lerna.json', () => {
     assert.jsonFileContent(`${appName}/lerna.json`, {
@@ -28,6 +29,10 @@ describe('generator-elderfo-typescript-workspace:app', () => {
   });
 
   it('should copy non-template files', () => {
-    assert.file([`${appName}/jest.json`, `${appName}/tsconfig.json`]);
+    assert.file([
+      `${appName}/jest.json`,
+      `${appName}/tsconfig.json`,
+      `${appName}/webpack.config.js`,
+    ]);
   });
 });
