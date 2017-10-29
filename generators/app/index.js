@@ -99,6 +99,12 @@ module.exports = class extends Generator {
     }).then(() => {
       if (this.bootstrap) {
         this.spawnCommandSync('yarn', ['run', 'bootstrap']);
+        this.spawnCommandSync('yarn', [
+          'add',
+          'generator-elderfo-typescript-project',
+          '-D',
+          '-W',
+        ]);
       }
 
       process.chdir(cwd);

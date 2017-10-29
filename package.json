@@ -1,5 +1,5 @@
 {
-  "name": "generator-elderfo-typescript-workspace",
+  "name": "generator-elderfo-typescript-project",
   "version": "0.0.0-development",
   "description": "Boilerplate for typescript projects using yarn workspaces",
   "homepage": "",

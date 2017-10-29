@@ -22,7 +22,7 @@
     "dev": "lerna run --parallel dev",
     "pretest": "lerna run --parallel build",
     "test": "jest -c ./jest.json",
-    "generate-package": "yo elderfo-typescript-workspace:package"
+    "generate-package": "yo elderfo-typescript-project:package"
   },
   "workspaces": ["packages/*", "tools/*"]
 }
