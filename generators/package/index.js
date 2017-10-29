@@ -37,12 +37,21 @@ module.exports = class extends Generator {
         message: `Package version:`,
         default: defaultVersion,
       },
+      {
+        type: 'input',
+        name: 'packageScope',
+        message: `Package scope:`,
+        default: '',
+      },
     ];
 
     return this.prompt(prompts).then(props => {
       // To access props later use this.props.someAnswer;
       this.props = props;
       this.props.packagePath = path.resolve(`packages/${props.name}`);
+      this.props.packageName = props.packageScope
+        ? `${props.packageScope}/${props.name}`
+        : props.name;
     });
   }
 
@@ -67,7 +76,7 @@ module.exports = class extends Generator {
       this.destinationPath(`${this.props.packagePath}/package.json`),
       {
         version: this.props.version,
-        name: this.props.name,
+        name: this.props.packageName,
       }
     );
   }
@@ -91,7 +100,8 @@ module.exports = class extends Generator {
   end() {
     this.log('');
     this.log(
-      `Success! Created package ${this.props.name} at ${this.props.projectPath}`
+      `Success! Created package ${this.props.packageName} at ${this.props
+        .projectPath}`
     );
     this.log('');
   }

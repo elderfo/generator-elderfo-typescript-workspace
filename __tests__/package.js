@@ -15,14 +15,40 @@ describe('generator-elderfo-typescript-workspace:package', () => {
       .withPrompts({ name: appName, version: appVersion });
   });
 
-  it('should assign name and version to package.json', () => {
+  it('should assign name and version to package.json', async () => {
+    await helpers
+      .run(path.join(__dirname, '../generators/package'))
+      .withOptions({ 'skip-bootstrap': true })
+      .withPrompts({ name: appName, version: appVersion });
+
     assert.jsonFileContent(`packages/${appName}/package.json`, {
       name: appName,
       version: appVersion,
     });
   });
 
-  it('should copy non-template files', () => {
+  it('should assign scope to package.json', async () => {
+    await helpers
+      .run(path.join(__dirname, '../generators/package'))
+      .withOptions({ 'skip-bootstrap': true })
+      .withPrompts({
+        name: appName,
+        version: appVersion,
+        packageScope: 'abc123',
+      });
+
+    assert.jsonFileContent(`packages/${appName}/package.json`, {
+      name: `abc123/${appName}`,
+      version: appVersion,
+    });
+  });
+
+  it('should copy non-template files', async () => {
+    await helpers
+      .run(path.join(__dirname, '../generators/package'))
+      .withOptions({ 'skip-bootstrap': true })
+      .withPrompts({ name: appName, version: appVersion });
+
     assert.file([
       `packages/${appName}/tsconfig.json`,
       `packages/${appName}/__tests__/index.test.ts`,
