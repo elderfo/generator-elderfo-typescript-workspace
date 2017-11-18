@@ -29,10 +29,6 @@ describe('generator-elderfo-typescript-workspace:app', () => {
   });
 
   it('should copy non-template files', () => {
-    assert.file([
-      `${appName}/jest.json`,
-      `${appName}/tsconfig.json`,
-      `${appName}/webpack.config.js`,
-    ]);
+    assert.file([`${appName}/jest.json`, `${appName}/tsconfig.json`]);
   });
 });

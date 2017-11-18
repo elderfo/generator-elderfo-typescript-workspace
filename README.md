@@ -33,8 +33,7 @@ The application configuration expects the application to be structured like:
 |-- jest.json
 |-- lerna.json
 |-- package.json
-|-- tsconfig.json
-`-- webpack.config.js
+\-- tsconfig.json
 ```
 
 * `packages` is for the main applicaiton packages
