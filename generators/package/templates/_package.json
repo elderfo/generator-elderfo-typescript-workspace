@@ -2,6 +2,7 @@
   "name": "<%= name %>",
   "version": "<%= version %>",
   "main": "build/index.js",
+  "types": "build/index.d.js",
   "scripts": {
     "build": "tsc -p ./tsconfig.json",
     "clean": "rimraf ./build",
