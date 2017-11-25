@@ -20,7 +20,6 @@
     "clean-all":
       "rm -rf ./node_modules && rm -rf ./packages/*/node_modules && rm -rf ./packages/*/build && rm -rf ./tools/*/node_modules",
     "dev": "lerna run --parallel dev",
-    "pretest": "lerna run --parallel build",
     "test": "jest -c ./jest.json",
     "generate-package": "yo elderfo-typescript-project:package"
   },
